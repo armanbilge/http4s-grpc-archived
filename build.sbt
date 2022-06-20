@@ -3,6 +3,7 @@ ThisBuild / tlUntaggedAreSnapshots := false
 
 ThisBuild / organization := "com.armanbilge"
 ThisBuild / organizationName := "Arman Bilge"
+ThisBuild / startYear := Some(2022)
 ThisBuild / developers := List(
   tlGitHubDev("armanbilge", "Arman Bilge")
 )
@@ -19,6 +20,7 @@ val catsVersion = "2.8.0"
 val catsEffectVersion = "3.3.12"
 val fs2Version = "3.2.8"
 val http4sVersion = "0.23.12"
+val scalaPBVersion = "0.11.11"
 
 val munitVersion = "0.7.29"
 val munitCEVersion = "1.0.7"
@@ -38,6 +40,7 @@ lazy val core = crossProject(JVMPlatform, JSPlatform)
       "org.typelevel" %%% "cats-effect" % catsEffectVersion,
       "co.fs2" %%% "fs2-io" % fs2Version,
       "org.http4s" %%% "http4s-core" % http4sVersion,
+      "com.thesamet.scalapb" %%% "scalapb-runtime" % scalaPBVersion,
       "org.typelevel" %%% "cats-laws" % catsVersion % Test,
       "org.scalameta" %%% "munit-scalacheck" % munitVersion % Test,
       "org.typelevel" %%% "munit-cats-effect-3" % munitCEVersion % Test,
